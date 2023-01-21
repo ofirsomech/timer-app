@@ -1,11 +1,11 @@
 import React from 'react';
-import './CountdownTimer.scss';
+import './ContainerTimer.scss';
 
 import Timer from "../Timer/Timer";
 import hero from "../../assets/images/hero.png"
 import rocket from "../../assets/images/rocket.png"
 
-const CountdownTimer = () => {
+const ContainerTimer = () => {
     return (<>
             <div className="countdown-timer">
                 <div className="new-section">
@@ -25,13 +25,13 @@ const CountdownTimer = () => {
                 <div className="countdown-text">Countdown to lift off</div>
                 <div className="timers-container">
                     <div className="timer">
-                        <Timer initialTime={3 * 60}/>
+                        <Timer initialTime={3 * 60} id={"time_1"}/>
                     </div>
                     <div className="timer">
-                        <Timer initialTime={4 * 60}/>
+                        <Timer initialTime={4 * 60} id={"time_2"}/>
                     </div>
                     <div className="timer">
-                        <Timer initialTime={5 * 60}/>
+                        <Timer initialTime={5 * 60} id={"time_3"}/>
                     </div>
                 </div>
             </div>
@@ -39,4 +39,4 @@ const CountdownTimer = () => {
     );
 };
 
-export default CountdownTimer;
+export default ContainerTimer;

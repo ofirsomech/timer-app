@@ -115,6 +115,7 @@ $bg-img-path: '../../assets/images/background.svg';
     height: 100%;
     width: 100vw;
   }
+
   .countdown-text {
     color: white;
     font-weight: bold;
@@ -154,6 +155,9 @@ $bg-img-path: '../../assets/images/background.svg';
         max-width: 45%;
         @media (max-width: 950px) {
           max-width: 100%;
+          width: 387px;
+          margin-bottom: 9%;
+          margin-right: 0;
         }
       }
     }
@@ -182,6 +186,17 @@ $bg-img-path: '../../assets/images/background.svg';
 
   body {
     font-family: 'Pattaya', sans-serif;
+  }
+}
+
+/* Styles for tablet screens */
+@media (max-width: 950px) and (min-width: 600px) {
+  .timers-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .timer {
+    margin: 1rem 0;
   }
 }
 
