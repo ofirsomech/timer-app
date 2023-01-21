@@ -354,3 +354,26 @@ $bg-img-path: '../../assets/images/background.svg';
   }
 }
 
+.timers-container {
+  display: flex; /* align items horizontally */
+  justify-content: center; /* center items horizontally */
+
+  /* stack items on top of each other on mobile */
+  @media (max-width: 600px) {
+    flex-wrap: wrap; /* allow items to wrap onto multiple lines */
+  }
+
+  /* individual timer */
+  .timer {
+    flex: 1; /* take up equal amount of space */
+    margin: 0 10px; /* add some spacing between items */
+
+    /* stack items on top of each other on mobile */
+    @media (max-width: 600px) {
+      width: 100%; /* take up full width on mobile */
+      margin-bottom: 20px; /* add some spacing between items on mobile */
+    }
+  }
+}
+
+

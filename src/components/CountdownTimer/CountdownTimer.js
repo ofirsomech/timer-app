@@ -3,14 +3,17 @@ import './CountdownTimer.scss';
 
 import hero from "../../assets/images/hero.png"
 import rocket from "../../assets/images/rocket.png"
+import Timer from "../Timer/Timer";
 
 const CountdownTimer = () => {
     const [timeLeft, setTimeLeft] = useState(5 * 60);
     const [intervalId, setIntervalId] = useState(null);
+    const [isTimerOn, setIsTimerOn] = useState(true);
 
     useEffect(() => {
-        if (timeLeft === 0) {
+        if (isTimerOn && timeLeft === 0) {
             alert("You missed the last rocket to mars!");
+            setIsTimerOn(false)
             clearInterval(intervalId);
         }
     }, [timeLeft, intervalId]);
@@ -30,26 +33,22 @@ const CountdownTimer = () => {
     }, [timeLeft, startTimer, intervalId]);
 
     const resetTimer = () => {
+        setIsTimerOn(true)
         clearInterval(intervalId);
         setIntervalId(null);
         setTimeLeft(5 * 60);
     };
 
-    const formattedTimeLeft = timeLeft => {
-        let minutes = Math.floor(timeLeft / 60);
-        let seconds = timeLeft % 60;
-        return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-    };
-
     return (<>
             <div className="countdown-timer">
                 <div className="new-section">
-                    <img src={rocket} alt="new section image" />
+                    <img src={rocket} alt="new section image"/>
                 </div>
                 <div className="countdown-section">
                     <div className="description-text">
                         <h1>Get your seat to mars</h1>
-                        <p>Earth is doomed, nut don't worry!The last rocket is leaving for mars soon, so hurry up and book your flight!</p>
+                        <p>Earth is doomed, nut don't worry!The last rocket is leaving for mars soon, so hurry up and
+                            book your flight!</p>
                     </div>
                     <div className="image-container">
                         <img src={hero} alt="countdown section image"/>
@@ -57,15 +56,16 @@ const CountdownTimer = () => {
                 </div>
 
                 <div className="countdown-text">Countdown to lift off</div>
-                <div className="timer">
-                    <div className="time-left">
-                        <span className="time-num">{formattedTimeLeft(timeLeft).split(':')[0]}</span>
-                        :
-                        <span>{formattedTimeLeft(timeLeft).split(':')[1]}</span>
+                <div className="timers-container">
+                    <div className="timer">
+                        <Timer initialTime={3 * 60} />
                     </div>
-                </div>
-                <div className="controls">
-                    <button onClick={resetTimer}>Reset timer</button>
+                    <div className="timer">
+                        <Timer initialTime={4 * 60} />
+                    </div>
+                    <div className="timer">
+                        <Timer initialTime={5 * 60} />
+                    </div>
                 </div>
             </div>
         </>
