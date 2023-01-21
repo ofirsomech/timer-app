@@ -1,0 +1,356 @@
+$bg-img-path: '../../assets/images/background.svg';
+
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+.countdown-timer {
+  font-family: 'Pattaya', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url($bg-img-path);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+
+  .timer {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+
+    .time-left {
+      color: white;
+      font-weight: bold;
+      position: relative;
+
+      & span.time-num {
+        &::before {
+          content: "";
+          position: absolute;
+          top: -10px;
+          left: -10px;
+          bottom: -10px;
+          right: -10px;
+          background-color: white;
+          opacity: 0.2;
+          border: 2px solid;
+          border-radius: 36px;
+        }
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    margin-top: 1rem;
+
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+      margin-right: 0.5rem;
+      transition: background-color 250ms ease-in-out;
+      background-color: #ff3200;
+      border-radius: 30px;
+      border: none;
+
+      &:hover {
+        background-color: darkred;
+      }
+    }
+  }
+}
+
+.countdown-text {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.countdown-section {
+  display: flex;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.description-text {
+  width: 45%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.description-text h1{
+  color: #61dafb;
+  size: 20px;
+}
+
+.description-text, .image-container {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+.image-container {
+  width: 45%;
+  text-align: center;
+}
+
+.image-container img {
+  width: 100%;
+  max-width: 45%;
+  transition: all 250ms ease-in-out;
+}
+
+.image-container img:hover {
+  transform: rotate(360deg);
+}
+
+.new-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-section img {
+  width: 100%;
+  max-width: 45%;
+  transition: transform 250ms ease-in-out;
+  animation: rotateRocket 2s ease-in-out infinite;
+}
+
+@keyframes rotateRocket {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+}
+
+
+@media (max-width: 950px) {
+  .countdown-timer {
+    font-family: 'Pattaya', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url($bg-img-path);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+
+    .timer {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+
+      .time-left {
+        color: white;
+        font-weight: bold;
+        position: relative;
+
+        & span.time-num {
+          &::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            bottom: -10px;
+            right: -10px;
+            background-color: white;
+            opacity: 0.2;
+            border: 2px solid;
+            border-radius: 36px;
+          }
+        }
+      }
+    }
+
+    .controls {
+      display: flex;
+      margin-top: 1rem;
+
+      button {
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
+        transition: background-color 250ms ease-in-out;
+
+        &:hover {
+          background-color: darkred;
+        }
+      }
+    }
+  }
+  .countdown-text {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .countdown-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 950px) {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    .description-text {
+      width: 45%;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      @media (max-width: 950px) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+
+    .image-container {
+      width: 45%;
+      text-align: center;
+      @media (max-width: 950px) {
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+        max-width: 45%;
+        @media (max-width: 950px) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  .new-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 950px) {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  body {
+    font-family: 'Pattaya', sans-serif;
+  }
+
+  .timer {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    @media (max-width: 950px) {
+      font-size: 2rem;
+    }
+
+    .time-left {
+      color: white;
+      font-weight: bold;
+      position: relative;
+      font-size: 4rem;
+
+      & span.time-num {
+        &::before {
+          content: "";
+          position: absolute;
+          top: -10px;
+          left: -10px;
+          bottom: -10px;
+          right: -10px;
+          background-color: white;
+          opacity: 0.2;
+          border: 2px solid;
+          border-radius: 36px;
+        }
+      }
+
+      @media (max-width: 950px) {
+        font-size: 2rem;
+      }
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+
+      button {
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
+        transition: background-color 250ms ease-in-out;
+
+        &:hover {
+          background-color: darkred;
+        }
+      }
+
+      @media (max-width: 950px) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    .countdown-text {
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: 'Pattaya', sans-serif;
+      @media (max-width: 950px) {
+        font-size: 1.5rem;
+      }
+    }
+
+    .countdown-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0px;
+      margin: 0px;
+      @media (max-width: 950px) {
+        flex-direction: column;
+      }
+    }
+
+    .description-text {
+      width: 45%;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      font-family: 'Pattaya', sans-serif;
+      @media (max-width: 950px) {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
+
+    .image-container {
+      width: 45%;
+      text-align: center;
+      @media (max-width: 950px) {
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+        max-width: 45%;
+        @media (max-width: 950px) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
