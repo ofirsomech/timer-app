@@ -30,6 +30,7 @@
     justify-content: center;
 
     button {
+      font-family: 'Pattaya', sans-serif;
       padding: 0.5rem 1rem;
       font-size: 1.2rem;
       margin-right: 0.5rem;
@@ -37,6 +38,7 @@
       background-color: #ff3200;
       border-radius: 30px;
       border: none;
+      color: white;
 
       &:hover {
         background-color: darkred;

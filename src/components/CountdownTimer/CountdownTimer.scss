@@ -3,6 +3,8 @@ $bg-img-path: '../../assets/images/background.svg';
 .countdown-timer {
   font-family: 'Pattaya', sans-serif;
   display: flex;
+  font-size: 20px;
+  font-weight: bolder;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -11,51 +13,6 @@ $bg-img-path: '../../assets/images/background.svg';
   background-position: center;
   height: 100vh;
   width: 100vw;
-
-  .timer {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-
-    .time-left {
-      color: white;
-      font-weight: bold;
-      position: relative;
-
-      & span.time-num {
-        &::before {
-          content: "";
-          position: absolute;
-          top: -10px;
-          left: -10px;
-          bottom: -10px;
-          right: -10px;
-          background-color: white;
-          opacity: 0.2;
-          border: 2px solid;
-          border-radius: 36px;
-        }
-      }
-    }
-  }
-
-  .controls {
-    display: flex;
-    margin-top: 1rem;
-
-    button {
-      padding: 0.5rem 1rem;
-      font-size: 1.2rem;
-      margin-right: 0.5rem;
-      transition: background-color 250ms ease-in-out;
-      background-color: #ff3200;
-      border-radius: 30px;
-      border: none;
-
-      &:hover {
-        background-color: darkred;
-      }
-    }
-  }
 }
 
 .countdown-text {
@@ -77,18 +34,33 @@ $bg-img-path: '../../assets/images/background.svg';
   text-align: center;
   color: white;
   font-weight: bold;
+  margin-left: 18%;
 }
 
-.description-text h1{
+.description-text h1 {
   color: #61dafb;
-  size: 20px;
+  font-size: 80px;
+  @media (max-width: 950px) {
+    font-size: 40px;
+  }
+}
+
+.description-text p {
+  font-size: 40px;
+  @media (max-width: 950px) {
+    font-size: 20px;
+  }
 }
 
 .description-text, .image-container {
   box-sizing: border-box;
   padding: 0px;
-  margin: 0px;
+  @media (max-width: 950px) {
+    margin: 0;
+  }
+
 }
+
 
 .image-container {
   width: 45%;
@@ -99,6 +71,7 @@ $bg-img-path: '../../assets/images/background.svg';
   width: 100%;
   max-width: 45%;
   transition: all 250ms ease-in-out;
+  margin-right: 35%;
 }
 
 .image-container img:hover {
@@ -109,13 +82,14 @@ $bg-img-path: '../../assets/images/background.svg';
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 7%;
 }
 
 .new-section img {
-  width: 100%;
+  width: 360px;
   max-width: 45%;
   transition: transform 250ms ease-in-out;
-  animation: rotateRocket 2s ease-in-out infinite;
+  animation: rotateRocket 5s ease-in-out infinite;
 }
 
 @keyframes rotateRocket {
@@ -123,7 +97,7 @@ $bg-img-path: '../../assets/images/background.svg';
     transform: rotate(0deg);
   }
   50% {
-    transform: rotate(180deg);
+    transform: rotate(40deg);
   }
 }
 
@@ -140,48 +114,6 @@ $bg-img-path: '../../assets/images/background.svg';
     background-position: center;
     height: 100%;
     width: 100vw;
-
-    .timer {
-      font-size: 4rem;
-      margin-bottom: 1rem;
-
-      .time-left {
-        color: white;
-        font-weight: bold;
-        position: relative;
-
-        & span.time-num {
-          &::before {
-            content: "";
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            bottom: -10px;
-            right: -10px;
-            background-color: white;
-            opacity: 0.2;
-            border: 2px solid;
-            border-radius: 36px;
-          }
-        }
-      }
-    }
-
-    .controls {
-      display: flex;
-      margin-top: 1rem;
-
-      button {
-        padding: 0.5rem 1rem;
-        font-size: 1.2rem;
-        margin-right: 0.5rem;
-        transition: background-color 250ms ease-in-out;
-
-        &:hover {
-          background-color: darkred;
-        }
-      }
-    }
   }
   .countdown-text {
     color: white;
@@ -231,125 +163,25 @@ $bg-img-path: '../../assets/images/background.svg';
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10%;
     @media (max-width: 950px) {
+      margin-top: 10%;
       flex-wrap: wrap;
       justify-content: space-evenly;
     }
 
     img {
+      width: 360px;
       max-width: 100%;
+      @media (max-width: 950px) {
+        width: 260px;
+      }
+
     }
   }
 
   body {
     font-family: 'Pattaya', sans-serif;
-  }
-
-  .timer {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    @media (max-width: 950px) {
-      font-size: 2rem;
-    }
-
-    .time-left {
-      color: white;
-      font-weight: bold;
-      position: relative;
-      font-size: 4rem;
-
-      & span.time-num {
-        &::before {
-          content: "";
-          position: absolute;
-          top: -10px;
-          left: -10px;
-          bottom: -10px;
-          right: -10px;
-          background-color: white;
-          opacity: 0.2;
-          border: 2px solid;
-          border-radius: 36px;
-        }
-      }
-
-      @media (max-width: 950px) {
-        font-size: 2rem;
-      }
-    }
-
-    .controls {
-      display: flex;
-      justify-content: center;
-      margin-top: 1rem;
-
-      button {
-        padding: 0.5rem 1rem;
-        font-size: 1.2rem;
-        margin-right: 0.5rem;
-        transition: background-color 250ms ease-in-out;
-
-        &:hover {
-          background-color: darkred;
-        }
-      }
-
-      @media (max-width: 950px) {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-
-    .countdown-text {
-      color: white;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 20px;
-      font-family: 'Pattaya', sans-serif;
-      @media (max-width: 950px) {
-        font-size: 1.5rem;
-      }
-    }
-
-    .countdown-section {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0px;
-      margin: 0px;
-      @media (max-width: 950px) {
-        flex-direction: column;
-      }
-    }
-
-    .description-text {
-      width: 45%;
-      text-align: center;
-      color: white;
-      font-weight: bold;
-      font-family: 'Pattaya', sans-serif;
-      @media (max-width: 950px) {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-    }
-
-    .image-container {
-      width: 45%;
-      text-align: center;
-      @media (max-width: 950px) {
-        width: 100%;
-      }
-
-      img {
-        width: 100%;
-        max-width: 45%;
-        @media (max-width: 950px) {
-          max-width: 100%;
-        }
-      }
-    }
   }
 }
 

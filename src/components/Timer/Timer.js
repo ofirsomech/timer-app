@@ -7,6 +7,7 @@ const Timer = ({initialTime}) => {
     const [isTimerOn, setIsTimerOn] = useState(true);
     useEffect(() => {
         if (isTimerOn && timeLeft === 0) {
+            alert("You missed the last rocket to mars!");
             clearInterval(intervalId);
             setIsTimerOn(false);
         }
