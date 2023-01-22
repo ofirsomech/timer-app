@@ -11,6 +11,7 @@ describe('Timer', () => {
 
         fireEvent.click(resetButton);
         const timeLeft = screen.getByText('1');
+
         expect(timeLeft).toBeInTheDocument();
     });
 });
@@ -20,8 +21,8 @@ describe('ContainerTimer', () => {
     test('ContainerTimer displays "Get your seat to mars" text', () => {
         render(<ContainerTimer/>);
         const text = screen.getByText('Get your seat to mars');
+
         expect(text).toBeInTheDocument();
     });
-
 });
 
