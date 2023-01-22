@@ -9,6 +9,7 @@ describe('Timer', () => {
         render(<Timer initialTime={initialTime} id={'timer1'}/>);
         const resetButton = screen.getByText('Reset timer');
 
+
         fireEvent.click(resetButton);
         const timeLeft = screen.getByText('1');
 
