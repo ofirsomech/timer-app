@@ -1,8 +1,27 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from 'react';
+import {fireEvent, render, screen} from '@testing-library/react';
+import Timer from "./components/Timer/Timer";
+import ContainerTimer from "./components/ContainerTimer/ContainerTimer";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('Timer', () => {
+    test('timer can be reset', () => {
+        const initialTime = 60;
+        render(<Timer initialTime={initialTime} id={'timer1'}/>);
+        const resetButton = screen.getByText('Reset timer');
+
+        fireEvent.click(resetButton);
+        const timeLeft = screen.getByText('1');
+        expect(timeLeft).toBeInTheDocument();
+    });
 });
+
+
+describe('ContainerTimer', () => {
+    test('ContainerTimer displays "Get your seat to mars" text', () => {
+        render(<ContainerTimer/>);
+        const text = screen.getByText('Get your seat to mars');
+        expect(text).toBeInTheDocument();
+    });
+
+});
+
